@@ -1,5 +1,5 @@
 def processes_have_ids
-  puts separator
+  separator
   puts 'Chapter 3: Processes Have IDs'
 
   puts "This process is running on pid #{Process.pid}"
@@ -7,9 +7,9 @@ def processes_have_ids
   puts "ps #{Process.pid}"
 
   puts 'Note: Ruby\'s Process.pid maps to getpid(2).'
-  puts separator
+  separator
   puts 'Type 1 to exit or anything else to go back to index'
   input = get_input
 
-  input.to_i == 1 ? exit : print_index
+  input.to_i == 1 ? exit : Index.print_index
 end
