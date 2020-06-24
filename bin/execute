@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
 puts 'Starting...'
-require_relative '../chapters/index'
+require_relative '../code/router'
