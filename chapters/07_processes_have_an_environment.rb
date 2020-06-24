@@ -18,6 +18,6 @@ class ProcessEnvironment < ChapterBase
     puts 'ENV is not actually a Hash, as some methods like #merge are not implemented'
     puts 'If you want to see the current full ENV for this process, press 0'
     input = STDIN.gets
-    pp ENV.to_h if input.to_i.zero?
+    puts ENV.to_h if input.to_i.zero?
   end
 end

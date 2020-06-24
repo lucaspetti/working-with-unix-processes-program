@@ -12,28 +12,28 @@ class Router
 
     skip_menu ? print_chapters : print_index
     input = get_input
-    map_input.keys.include?(input.to_i) ? map_input[input.to_i].call : wrong_input(input)
+    map_input.keys.include?(input.to_i) ? execute_chapter(input) : wrong_input(input)
   end
 
   def map_input
     {
-      3 => proc { ProcessID.new(Process).execute },
-      4 => proc { ProcessParents.new(Process).execute },
-      5 => proc { FileDescriptor.new.execute },
-      6 => proc { ResourceLimits.new.execute },
-      7 => proc { ProcessEnvironment.new.execute },
-      8 => proc { ProcessArguments.new.execute },
-      9 => proc { ProcessNames.new.execute },
-      10 => proc { still_developing },
-      11 => proc { still_developing },
-      12 => proc { still_developing },
-      13 => proc { still_developing },
-      14 => proc { still_developing },
-      15 => proc { still_developing },
-      16 => proc { still_developing },
-      17 => proc { still_developing },
-      18 => proc { still_developing },
-      19 => proc { still_developing }
+      3 => 'ProcessID',
+      4 => 'ProcessParents',
+      5 => 'FileDescriptor',
+      6 => 'ResourceLimits',
+      7 => 'ProcessEnvironment',
+      8 => 'ProcessArguments',
+      9 => 'ProcessNames',
+      10 => 'ProcessExitCodes',
+      11 => 'ProcessForks',
+      12 => 'OrphanedProcesses',
+      13 => 'SharedMemory',
+      14 => 'ProcessWait',
+      15 => 'ZombieProcesses',
+      16 => 'ProcessSignals',
+      17 => 'ProcessCommunicate',
+      18 => 'DaemonProcesses',
+      19 => 'TerminalProcesses'
     }
   end
 
@@ -47,6 +47,10 @@ class Router
 
   def wrong_input(input)
     abort "Could not understand #{input}"
+  end
+
+  def execute_chapter(input)
+    Object.const_get(map_input[input.to_i]).new.execute
   end
 
   def exit_chapter
