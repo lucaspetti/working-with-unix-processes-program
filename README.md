@@ -1,6 +1,6 @@
 # Working with Unix Processes Program
 
-A Ruby program freely inspired in the chapters of the book "Working With Unix Processes" by Jesse Storimer.
+A Ruby program freely inspired in the chapters of the book "Working With Unix Processes" by Jesse Storimer. This program reduces a lot of the chapters and is not intended to replace the book, just serve as a repository of the examples.
 
 ## To run the program
 
