@@ -38,6 +38,6 @@ class ResourceLimits < ChapterBase
   end
 
   def change_soft_limit(limit)
-    Process.setrlimit(:NOFILE, limit)
+    Process.setrlimit(:NOFILE, limit, Process.getrlimit(:NOFILE).last)
   end
 end
