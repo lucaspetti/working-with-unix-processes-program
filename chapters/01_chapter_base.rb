@@ -24,4 +24,14 @@ class ChapterBase
   def open_file(path)
     File.open path
   end
+
+  def create_fork
+    fork do
+      puts "-- Hello world from child process with pid #{Process.pid} --"
+      at_exit do
+        puts '-- Goodbye world from child process! --'
+        separator
+      end
+    end
+  end
 end

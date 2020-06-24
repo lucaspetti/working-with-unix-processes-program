@@ -13,19 +13,14 @@ class ProcessForks < ChapterBase
     separator
     puts 'Creating a child process...'
     puts ''
-    create_fork(example_fork)
+    create_fork
     sleep 2
     puts ''
     puts 'Created child process with a block'
   end
 
-  def create_fork(block)
-    fork { block }
-  end
-
-  def example_fork
+  def print_child_content
     separator
     puts "-- Hello world from child process with pid #{Process.pid} --"
-    separator
   end
 end
