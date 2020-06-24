@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-CHAPTERS = Dir.entries('./chapters/').select! { |f| /\d/.match f }
+CHAPTERS = Dir.glob('chapters/*.rb').map { |f| f.delete_prefix('chapters/') }
 CHAPTERS.each { |file| require_relative "../chapters/#{file}" }
 require_relative 'printer'
 
@@ -42,7 +42,7 @@ class Router
   end
 
   def chapter_names
-    CHAPTERS.sort.map { |name| name.split('.').first }
+    CHAPTERS.sort.map { |name| name.chomp('.rb') }
   end
 
   def wrong_input(input)
