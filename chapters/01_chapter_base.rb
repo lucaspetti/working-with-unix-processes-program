@@ -20,4 +20,8 @@ class ChapterBase
   def print_content
     puts 'Still Developing...'
   end
+
+  def open_file(path)
+    File.open path
+  end
 end

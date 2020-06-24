@@ -34,8 +34,4 @@ class FileDescriptor < ChapterBase
     puts "Fileno for STDOUT: #{STDOUT.fileno}"
     puts "Fileno for STDERR: #{STDERR.fileno}"
   end
-
-  def open_file(path)
-    File.open path
-  end
 end

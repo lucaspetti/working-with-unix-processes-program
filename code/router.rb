@@ -8,6 +8,8 @@ class Router
   include Printer
 
   def execute(skip_menu = nil)
+    return help_menu if ARGV.include?('--help')
+
     skip_menu ? print_chapters : print_index
     input = get_input
     map_input.keys.include?(input.to_i) ? map_input[input.to_i].call : wrong_input(input)
@@ -54,8 +56,4 @@ class Router
   end
 end
 
-if ARGV.include?('--help')
-  Router.new.help_menu
-else
-  Router.new.execute
-end
+Router.new.execute
