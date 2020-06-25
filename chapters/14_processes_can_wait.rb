@@ -50,10 +50,7 @@ class ProcessWait < ChapterBase
 
   def print_child_content
     print 'Running child process.'
-    sleep 1.5
-    print '.'
-    sleep 1.5
-    print '.'
+    2.times { loading_dots }
     puts ''
   end
 end

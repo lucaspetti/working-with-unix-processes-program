@@ -36,4 +36,9 @@ module Printer
     print_title('HELP MENU')
     puts 'There is currently no help menu, sorry.'
   end
+
+  def loading_dots
+    sleep 1
+    print '.'
+  end
 end
