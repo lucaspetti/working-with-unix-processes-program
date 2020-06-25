@@ -31,7 +31,7 @@ class Router
       14 => 'ProcessWait',
       15 => 'ZombieProcesses',
       16 => 'ProcessSignals',
-      17 => 'ProcessCommunicate',
+      17 => 'ProcessesCommunicate',
       18 => 'DaemonProcesses',
       19 => 'TerminalProcesses'
     }
