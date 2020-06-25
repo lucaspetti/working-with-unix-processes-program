@@ -17,17 +17,14 @@ class ChapterBase
 
   private
 
-  def print_content
-    puts 'Still Developing...'
-  end
-
   def open_file(path)
     File.open path
   end
 
   def create_fork
     fork do
-      puts "-- Hello world from child process with pid #{Process.pid} --"
+      yield if block_given?
+      print_child_content
       at_exit do
         puts '-- Goodbye world from child process! --'
         separator
