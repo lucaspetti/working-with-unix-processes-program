@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../code/simple_server'
+
+puts 'Booting server...'
+
+SimpleServer.new.run

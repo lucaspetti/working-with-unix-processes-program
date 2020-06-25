@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+puts 'Running client...'
+require_relative '../code/tcp_client'
