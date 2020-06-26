@@ -2,3 +2,5 @@
 
 puts 'Starting...'
 require_relative '../code/router'
+
+Router.new.execute

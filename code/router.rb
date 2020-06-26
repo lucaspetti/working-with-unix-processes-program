@@ -59,5 +59,3 @@ class Router
     input.to_i == 1 ? exit : execute(:skip_menu)
   end
 end
-
-Router.new.execute
